@@ -1,4 +1,4 @@
-# Minimize Quantization Output Error with Bias Compensation
+# Deep Feature Surgery: Towards Accurate and Efficient Multi-Exit Networks
 
 This repo is the official implementation of "Deep Feature Surgery: Towards Accurate and Efficient Multi-Exit Networks" (ECCV 2024).
 > Autthors: [Cheng Gong](https://scholar.google.com/citations?user=SOUobmQAAAAJ), Yao Chen, Qiuyang Luo, Ye Lu, Tao Li, Yuzhi Zhang, Yufei Sun, Le Zhang
