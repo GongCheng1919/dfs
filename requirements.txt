@@ -1,0 +1,5 @@
+torch
+prefetch_generator
+timm
+easydict
+accelerate

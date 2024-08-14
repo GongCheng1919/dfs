@@ -1,0 +1,81 @@
+# DATA:
+img_size: 224
+crop_pct: 0.900 # 0.875
+data_dir: '/open_datasets/ImageNet'
+batch_size: 1024
+mean:
+    - 0.485
+    - 0.456
+    - 0.406
+std:
+    - 0.229
+    - 0.224
+    - 0.225
+
+# MODEL:
+TYPE: vit
+model: 'vit_tiny_patch16_224'
+drop: 0.1 # same as paper
+pretrained: true # 获取预训练模型
+model_kwargs: 
+    patch_size: 16
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4.0
+    qkv_bias: true
+    # drop_rate: 0.1 # same as paper, 等价于 drop
+    attn_drop_rate: 0.1 # same as paper
+
+# TRAIN: 请注意.VIT需要从预训练模型开始重新训练,因为其相比于CNN缺少归纳偏置,如果从头训练需要大得多的数据和训练次数才能达到和CNN以及原始模型相同的精度,一般而言只能做微调
+epochs: 60 # 60 # same as paper
+warmup_epochs: 0 # ~10k steps (4096 batch size)
+weight_decay: 0 # 5e-4 # 5e-4 # same as paper
+lr_base: 5e-5 # 1e-3 
+warmup_lr: 1e-6 
+min_lr: 0.0
+clip_grad: 1.0 # 
+grad_accum_steps: 1
+workers: 40
+# resume: "./output/train/vit-tiny-with-dns0.1-AdamW-v4-startlayer/model_best.pth.tar"
+# no_resume_opt: true # prevent resume of optimizer state when resuming model
+start_epoch: 0
+checkpoint_hist: 1 # number of checkpoints to keep (default: 10)
+# OPTIMIZER:
+opt: 'AdamW'
+opt_betas: 
+    - 0.9
+    - 0.999
+    
+# opt: "Sgd"
+# sched: "multistep"
+# decay_milestones:
+#     - 90
+#     - 100
+#     - 105
+
+# NUM_EPOCHS: 300  # same as paper
+# WARMUP_EPOCHS: 10  # ~10k steps (4096 batch size)
+# WEIGHT_DECAY: 0.3  # same as paper
+# BASE_LR: 3e-3
+# WARMUP_START_LR: 1e-6
+# END_LR: 0.0
+# GRAD_CLIP: 1.0
+# ACCUM_ITER: 16
+# OPTIMIZER:
+#     NAME: 'AdamW'
+#     BETAS: (0.9, 0.999)
+# VALIDATE_FREQ: 1
+# SAVE_FREQ: 10 
+# REPORT_FREQ: 96
+# QUANTIZE: False
+amp: true
+amp_impl: 'native' # 'native'
+use_multi_epochs_loader: false
+pin_mem: true
+pretrained: true
+# # 
+# dns_ratio: 0.5
+# use_dns: false
+# use_fr: false
+
