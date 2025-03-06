@@ -124,7 +124,7 @@ The average accuracy improvement of DFS across all tasks and all baselines is **
 Results show that DFS outperforms all the baselines at the early exits even without extra training tricks, and the average accuracy improvements of DFS on the 5 tasks are
 **4.33%**, **2.98%**, **2.04%**, **1.31%**, **1.10%**.
 The average accuracy achieved by DFS is **69.05%**, which significantly exceeds baselines, and the average accuracy improvement achieves **2.35%**. 
-Please find the MSDNet weight for ImageNet here [[baidu](https://pan.baidu.com/s/11iCFPtUvewILtzVCcoK5ew?pwd=rsqw)][[google](https://drive.google.com/file/d/1Op9V_YAm-zBPIjgHR2anQnhh15U-hZoI/view?usp=drive_link)].
+Please find the MSDNet weight for ImageNet here [[baidu](https://pan.baidu.com/s/1S9iQB7L4xVcCyyReKy8xXg?pwd=tup5)][[google](https://drive.google.com/file/d/14UDFeIH3R0URgXqVD1FQfCrqWbnz_VmT/view?usp=sharing)].
 | Methods | Exit1 | Exit2 | Exit3 | Exit4 | Exit5 | Average |
 | --- | --- | --- | --- | --- | --- | --- |
 | Params (M) | 4.24 | 8.77 | 13.07 | 16.75 | 23.96 | - |
